@@ -6,22 +6,14 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Nav */}
-      <nav className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold">AnalyticsPulse</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="/dashboard" className="text-muted hover:text-foreground text-sm">Dashboard</Link>
-            <Link href="/auth" className="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-lg text-sm font-medium">
-              Start Free
-            </Link>
-          </div>
+      <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl px-6 py-3 flex items-center justify-between">
+        <span className="text-xl font-bold tracking-tight">
+          <span className="bg-gradient-to-r from-accent-light to-accent bg-clip-text text-transparent">Analytics</span>
+          <span className="text-foreground">Pulse</span>
+        </span>
+        <div className="flex items-center gap-3">
+          <Link href="/auth/login" className="px-4 py-2 rounded-lg text-sm font-medium text-muted hover:text-foreground transition-colors">Sign In</Link>
+          <Link href="/auth/signup" className="px-5 py-2 bg-accent hover:bg-accent-light rounded-xl text-sm font-semibold text-white shadow-sm shadow-accent/20 transition-all hover:-translate-y-0.5">Start Free</Link>
         </div>
       </nav>
 
@@ -37,12 +29,12 @@ export default function LandingPage() {
         <p className="text-xl text-muted max-w-2xl mx-auto mb-10">
           Simple, lightweight analytics for your website. See your traffic, sources, and top pages without tracking personal data. GDPR-compliant by default.
         </p>
-        <div className="flex justify-center gap-4">
-          <Link href="/auth" className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-xl text-lg font-semibold">
+        <div className="flex justify-center gap-3 flex-wrap">
+          <Link href="/auth/signup" className="px-8 py-3.5 bg-accent hover:bg-accent-light rounded-xl font-semibold text-lg text-white shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5">
             Start Free Trial
           </Link>
-          <Link href="/dashboard" className="border border-border hover:border-border-light text-foreground px-8 py-3 rounded-xl text-lg font-semibold">
-            Live Demo
+          <Link href="/auth/login" className="px-8 py-3.5 border border-border hover:border-border-light rounded-xl font-semibold text-lg text-muted hover:text-foreground transition-all hover:-translate-y-0.5">
+            Sign In
           </Link>
         </div>
         <p className="text-sm text-muted mt-4">Free up to 5,000 pageviews/month. No credit card required.</p>
@@ -132,7 +124,7 @@ export default function LandingPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/auth" className={`block text-center py-2.5 rounded-lg font-medium text-sm ${tier.highlight ? 'bg-accent hover:bg-accent-light text-white' : 'border border-border hover:border-border-light'}`}>
+              <Link href="/auth/signup" className={`block text-center py-2.5 rounded-lg font-medium text-sm ${tier.highlight ? 'bg-accent hover:bg-accent-light text-white' : 'border border-border hover:border-border-light'}`}>
                 {tier.cta}
               </Link>
             </div>
@@ -148,7 +140,7 @@ export default function LandingPage() {
             <span className="text-accent">&lt;script</span> <span className="text-success">src</span>=<span className="text-warning">&quot;https://analyticspulse.com/ap.js&quot;</span><br />
             &nbsp;&nbsp;<span className="text-success">data-site</span>=<span className="text-warning">&quot;YOUR_SITE_ID&quot;</span> <span className="text-success">defer</span><span className="text-accent">&gt;&lt;/script&gt;</span>
           </div>
-          <Link href="/auth" className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-xl text-lg font-semibold inline-block">
+          <Link href="/auth/signup" className="bg-accent hover:bg-accent-light text-white px-8 py-3 rounded-xl text-lg font-semibold inline-block">
             Get Your Tracking Code
           </Link>
         </div>
@@ -188,18 +180,12 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-accent rounded flex items-center justify-center">
-              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <span className="text-sm font-medium">AnalyticsPulse</span>
-          </div>
-          <p className="text-sm text-muted">Part of the <a href="https://pulse-suite.pages.dev" className="text-accent hover:underline">Pulse Suite</a> for small businesses.</p>
-        </div>
+      <footer className="border-t border-border py-8 px-4 text-center">
+        <span className="text-xl font-bold tracking-tight">
+          <span className="bg-gradient-to-r from-accent-light to-accent bg-clip-text text-transparent">Analytics</span>
+          <span className="text-foreground">Pulse</span>
+        </span>
+        <p className="text-sm text-muted mt-2">Privacy-first web analytics. Part of the Pulse Suite.</p>
       </footer>
     </div>
   );

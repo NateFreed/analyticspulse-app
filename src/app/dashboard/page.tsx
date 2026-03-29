@@ -9,6 +9,7 @@ import VisitorChart from '../../components/analytics/VisitorChart';
 import TopPages from '../../components/analytics/TopPages';
 import SourcesChart from '../../components/analytics/SourcesChart';
 import { DevicesPanel, BrowsersPanel, CountriesPanel } from '../../components/analytics/DeviceChart';
+import LiveVisitors from '../../components/analytics/LiveVisitors';
 
 // Demo data for when no site is connected
 function getDemoData(): DashboardData {
@@ -123,6 +124,7 @@ function DashboardContent() {
             )}
           </div>
           <div className="flex items-center gap-3">
+            <Link href="/sites" className="text-sm text-muted hover:text-foreground">Sites</Link>
             <Link href="/settings" className="text-sm text-muted hover:text-foreground">Settings</Link>
             <Link href="/upgrade" className="text-sm bg-accent hover:bg-accent-light text-white px-3 py-1.5 rounded-lg">Upgrade</Link>
           </div>
@@ -169,9 +171,12 @@ function DashboardContent() {
           ))}
         </div>
 
-        {/* Visitor chart */}
-        <div className="mb-6">
-          <VisitorChart data={data.timeseries} />
+        {/* Visitor chart + Live visitors */}
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
+          <div className="md:col-span-2">
+            <VisitorChart data={data.timeseries} />
+          </div>
+          <LiveVisitors />
         </div>
 
         {/* Two columns: Pages + Sources */}
